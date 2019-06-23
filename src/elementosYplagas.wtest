@@ -1,0 +1,42 @@
+import elementos.*
+import plagas.*
+test "elementosYPlagas" {
+	nivelDeProduccion.nivel(150)
+	
+	const hogar1 = new Hogar(nivelDeMugre= 10, confort=25)
+	assert.equals(true, hogar1.esBueno())
+	const cuca = new Cucaracha(pesoPromedio=15, poblacion = 40)
+	cuca.atacar(hogar1)
+	assert.equals(44, cuca.poblacion())
+	assert.equals(17, cuca.pesoPromedio())
+	
+	assert.equals(30, hogar1.nivelDeMugre())
+	assert.equals(true, not hogar1.esBueno())
+	
+	const garra = new Garrapata(poblacion=50)
+	const huerta1 = new Huerta()
+	huerta1.produccion(160)
+	assert.equals(true, huerta1.esBueno())
+	garra.atacar(huerta1)
+	assert.equals(60, garra.poblacion())
+    assert.equals(140, huerta1.produccion())
+    assert.equals(true, not huerta1.esBueno())
+	
+//	const huerta2 = new Huerta()
+//	huerta2.produccion(120)
+//	
+//	const hogar2 = new Hogar(nivelDeMugre= 10, confort=19)
+//	
+//	
+//	const mascota = new Mascota(nivelDeSalud = 300)
+//	
+//	const barrio = new Barrio()
+//	barrio.agregarElemento(huerta1)
+//	barrio.agregarElemento(huerta2)
+//	barrio.agregarElemento(hogar1)
+//	barrio.agregarElemento(hogar2)
+//	barrio.agregarElemento(mascota)
+//	
+//	assert.that(barrio.esCopado())
+
+}

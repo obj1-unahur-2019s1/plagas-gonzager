@@ -1,0 +1,24 @@
+import elementos.*
+test "elementos" {
+	nivelDeProduccion.nivel(150)
+	const huerta1 = new Huerta()
+	huerta1.produccion(150)
+	
+	const huerta2 = new Huerta()
+	huerta2.produccion(120)
+	
+	const hogar1 = new Hogar(nivelDeMugre= 10, confort=25)
+	const hogar2 = new Hogar(nivelDeMugre= 10, confort=19)
+	
+	const mascota = new Mascota(nivelDeSalud = 300)
+	
+	const barrio = new Barrio()
+	barrio.agregarElemento(huerta1)
+	barrio.agregarElemento(huerta2)
+	barrio.agregarElemento(hogar1)
+	barrio.agregarElemento(hogar2)
+	barrio.agregarElemento(mascota)
+	
+	assert.that(barrio.esCopado())
+
+}

@@ -1,0 +1,10 @@
+import plagas.*
+test "Plagas" {
+
+	const cuca = new Cucaracha(pesoPromedio=5, poblacion = 300)
+	assert.equals(150, cuca.nivelDeDanio())
+	assert.equals(false, cuca.transmiteEnfermedades())
+	cuca.pesoPromedio(11)
+	assert.equals(true, cuca.transmiteEnfermedades())
+	
+}
